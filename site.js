@@ -4,7 +4,13 @@ document.querySelectorAll('[data-contacts]').forEach(container => {
     const target = contacts[key];
     const item = document.createElement(target ? 'a' : 'span');
     item.className = 'contact-link'; item.textContent = label;
-    if (target) item.href = key === 'email' && !target.startsWith('mailto:') ? `mailto:${target}` : target;
+    if (target) {
+      item.href = key === 'email' && !target.startsWith('mailto:') ? `mailto:${target}` : target;
+      item.target = '_blank';
+      item.rel = 'noopener noreferrer';
+      item.setAttribute('aria-label', key === 'email' ? 'Write an email' : `Open ${label} in a new tab`);
+      item.title = key === 'email' ? 'Write an email' : `Open ${label}`;
+    }
     container.append(item);
   }
 });
