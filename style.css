@@ -27,3 +27,5 @@
 }
 @media(max-width:370px){:root{--side:16px}.header nav{gap:12px;font-size:13px}.header .brand{width:86px}.service{gap:14px}.service p{font-size:11px}.hero-contact{right:7%}.category{font-size:9px}.claim{font-size:23px}.contact{gap:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body:not(.project-page) .header{border-bottom-color:transparent}
+body:not(.project-page) .header:after{content:'';position:absolute;left:0;right:0;bottom:calc(-1 * var(--rule));height:var(--rule);background:linear-gradient(to right,var(--dark) 0 18%,transparent 18% 31%,var(--dark) 31% 100%);pointer-events:none}
