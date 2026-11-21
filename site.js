@@ -21,7 +21,6 @@ function renderProjects() {
     const title=document.createElement('h3');title.textContent=project.title;
     const description=document.createElement('p');description.textContent=project.description;
     cover.append(image,category);card.append(cover,title,description);grid.append(card);
-    if (matchMedia('(max-width:700px)').matches && i>0) card.inert=true;
   }
   document.getElementById('gallery-status').textContent=`Showing ${projects[current].title}`;
 }
@@ -30,17 +29,16 @@ if(grid){
   document.querySelector('.previous').addEventListener('click',()=>{current=(current+projects.length-1)%projects.length;renderProjects()});
   document.querySelector('.next').addEventListener('click',()=>{current=(current+1)%projects.length;renderProjects()});
   let startX=0;grid.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX},{passive:true});grid.addEventListener('touchend',e=>{const diff=e.changedTouches[0].clientX-startX;if(Math.abs(diff)>50){current=(current+(diff<0?1:projects.length-1))%projects.length;renderProjects()}},{passive:true});
-  matchMedia('(max-width:700px)').addEventListener('change',renderProjects);
 }
 const caseRoot=document.getElementById('case-root');
 if(caseRoot){
   const id=new URLSearchParams(location.search).get('project');
   const project=projects.find(p=>p.id===id);
   if(project){
-    document.title=`${project.title} — The NSK`;
+    document.title=`${project.title} â€” The NSK`;
     document.getElementById('case-title').textContent=project.title;
     document.getElementById('case-category').textContent=project.category;
-    for(const file of project.images){const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`${project.title} — ${project.description}`;img.loading='lazy';caseRoot.append(img)}
+    for(const file of project.images){const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`${project.title} â€” ${project.description}`;img.loading='lazy';caseRoot.append(img)}
     const next=projects[(projects.indexOf(project)+1)%projects.length];const link=document.getElementById('next-case');link.href=`project.html?project=${next.id}`;link.textContent=`Next: ${next.title}`;
   }else{document.getElementById('case-title').textContent='Project not found';document.getElementById('next-case').hidden=true;}
 }
