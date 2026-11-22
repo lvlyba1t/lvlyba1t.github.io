@@ -31,3 +31,4 @@ body:not(.project-page) .header{border-bottom-color:transparent}
 body:not(.project-page) .header:after{content:'';position:absolute;left:0;right:0;bottom:calc(-1 * var(--rule));height:var(--rule);background:linear-gradient(to right,var(--dark) 0 18%,transparent 18% 31%,var(--dark) 31% 100%);pointer-events:none}
 .header nav a:hover{color:var(--green);text-decoration:none}
 .service p span{display:block;white-space:nowrap}
+@media(min-width:701px){.hero-title{height:11.111%}}
