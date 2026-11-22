@@ -71,6 +71,7 @@ body:not(.project-page) .header:after{content:'';position:absolute;left:0;right:
 @media(max-width:700px){
   .hero-contact{font-size:10px}
   .hero-contact .label img{height:7px}
+  .service{min-height:44px;padding:9px 0}
   .service h3 img{width:calc(75% + 16px)}
   .service p{font-size:10px}
   .service:not(:last-child):before,.service:not(:last-child):after{height:2px}
