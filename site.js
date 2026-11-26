@@ -46,6 +46,6 @@ if(caseRoot){
     document.getElementById('case-title').textContent=project.title;
     document.getElementById('case-category').textContent=project.category;
     for(const file of project.images){const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`${project.title} â€” ${project.description}`;img.loading='lazy';caseRoot.append(img)}
-    const next=projects[(projects.indexOf(project)+1)%projects.length];const link=document.getElementById('next-case');link.href=`project.html?project=${next.id}`;link.textContent=`Next: ${next.title}`;
+    const next=projects[(projects.indexOf(project)+projects.length-1)%projects.length];const link=document.getElementById('next-case');link.href=`project.html?project=${next.id}`;link.textContent=`Next: ${next.title}`;
   }else{document.getElementById('case-title').textContent='Project not found';document.getElementById('next-case').hidden=true;}
 }
