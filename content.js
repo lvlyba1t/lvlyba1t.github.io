@@ -4,6 +4,7 @@ window.NSK = {
   projects: [
     {id:'crea-altus', title:'CREA ALTUS', category:'Logo & Identity', description:'Brand identity', cover:'crea-cover.webp', images:['crea-cover.webp','detail-cards.webp','detail-shirt.webp','detail-wall.webp']},
     {id:'gwarant-kontrol', title:'GWARANT KONTROL', category:'Logo & Identity', description:'Brand identity', cover:'gwarant-cover.webp', images:['gwarant-full.webp']},
-    {id:'print-selection', title:'Print selection', category:'Print design', description:'Printed materials', cover:'print-cover.webp', images:['print-cover.webp']}
+    {id:'print-selection', title:'Print selection', category:'Print design', description:'Printed materials', cover:'print-cover.webp', images:['print-cover.webp']},
+    {id:'b-stone', title:'B-STONE GROUP', category:'Visual identity', description:'Identity built on the existing logo', cover:'b-stone.png', coverPosition:'left top', images:['b-stone.png']}
   ]
 };

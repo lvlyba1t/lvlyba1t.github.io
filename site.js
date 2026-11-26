@@ -18,11 +18,12 @@ const grid = document.getElementById('project-grid');
 let current = 0;
 function renderProjects() {
   grid.replaceChildren();
-  for (let i=0; i<projects.length; i++) {
+  for (let i=0; i<Math.min(3,projects.length); i++) {
     const project=projects[(current+i)%projects.length];
     const card=document.createElement('a');card.className='project-card';card.dataset.project=project.id;card.href=`project.html?project=${project.id}`;
     const cover=document.createElement('div');cover.className='project-cover';
     const image=document.createElement('img');image.src=`assets/${project.cover}`;image.alt=project.title;image.loading='lazy';image.width=768;image.height=600;
+    if (project.coverPosition) image.style.objectPosition = project.coverPosition;
     const category=document.createElement('span');category.className='category';category.textContent=project.category;
     const title=document.createElement('h3');title.textContent=project.title;
     const description=document.createElement('p');description.textContent=project.description;
