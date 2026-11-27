@@ -45,7 +45,15 @@ if(caseRoot){
     document.title=`${project.title} â€” The NSK`;
     document.getElementById('case-title').textContent=project.title;
     document.getElementById('case-category').textContent=project.category;
-    for(const file of project.images){const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`${project.title} â€” ${project.description}`;img.loading='lazy';caseRoot.append(img)}
+    for(const file of project.images){const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`${project.title} â€” ${project.description}`;img.loading='lazy';if(project.imageAlt) img.alt=project.imageAlt;
+      if(project.zoomable){
+        const fullSize=document.createElement('a');
+        fullSize.className='case-zoom';
+        fullSize.href=img.src;
+        fullSize.setAttribute('aria-label','View the leaflet in full resolution');
+        fullSize.append(img);
+        caseRoot.append(fullSize);
+      }else{caseRoot.append(img)}}
     const next=projects[(projects.indexOf(project)+projects.length-1)%projects.length];const link=document.getElementById('next-case');link.href=`project.html?project=${next.id}`;link.textContent=`Next: ${next.title}`;
   }else{document.getElementById('case-title').textContent='Project not found';document.getElementById('next-case').hidden=true;}
 }
