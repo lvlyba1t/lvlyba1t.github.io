@@ -82,6 +82,3 @@ body:not(.project-page) .header:after{content:'';position:absolute;left:0;right:
   .footer{border-top-width:2px}
   body:not(.project-page) .header:after{height:2px}
 }
-
-.case-images .case-zoom{display:block;justify-self:center;max-width:100%;cursor:zoom-in}
-.case-images .case-zoom img{width:auto;max-width:100%;max-height:84vh;max-height:84svh}
